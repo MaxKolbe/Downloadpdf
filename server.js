@@ -1,6 +1,8 @@
 const express = require('express')
 const downloadRoute = require("./Routes/downloads")
 const {connectToMongoDb} = require("./db")
+require("dotenv").config()
+const PORT = process.env.PORT || 3000
 
 const app = express()
 connectToMongoDb()
