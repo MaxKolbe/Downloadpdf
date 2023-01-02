@@ -4,8 +4,9 @@ const pdfModel = require("../models/pdfModel")
 
 const router = express.Router()
 
-router.get("/", (req, res)=>{
-  res.send("Welcome to the pre-download page")
+router.get("/", async (req, res)=>{
+  const pdf = await pdfModel.find()
+  res.render("home", {pdf})
 })
 router.get("/:id", async (req, res)=>{
   const id = req.params.id

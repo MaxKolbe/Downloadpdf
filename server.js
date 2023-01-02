@@ -5,6 +5,8 @@ const PORT = 3000 || process.env.PORT
 
 const app = express()
 connectToMongoDb()
+app.set('views', 'views');
+app.set('view engine', 'ejs');
 
 app.use("/download", downloadRoute)
 app.get("/", (req, res)=>{
